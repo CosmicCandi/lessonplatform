@@ -22,7 +22,7 @@ class CompaniesController < ApplicationController
   def not_trialing
     # Render only companies without active trials
     # AKA trial_status == nil
-    render json: { data: @companies.where(trial_status: nil) }
+    render json: { data: @companies.where(trial_status: nil).order(name: 'ASC') }
   end
 
   def created_last_month
@@ -37,7 +37,8 @@ class CompaniesController < ApplicationController
     # Finally render the list of companies created between the beginning and
     # end of last month
     render json: { data: @companies.where(created_at:
-                           beginning_of_last_month..end_of_last_month) }
+                           beginning_of_last_month..end_of_last_month)
+                           .order(name: 'ASC') }
   end
 
   private
