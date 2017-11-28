@@ -15,7 +15,7 @@ if companies.length < 5
         trial_status: (Date.today + 25),
         plan_level_id: PlanLevel.find(4).id },
       { name: 'AlbaCORE',
-        trial_status: (Date.today + 17),
+        # Trial Status intentionally left blank
         plan_level_id: PlanLevel.find(2).id }
     ]
   )
