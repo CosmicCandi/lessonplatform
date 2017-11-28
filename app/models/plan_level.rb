@@ -1,0 +1,2 @@
+class PlanLevel < ApplicationRecord
+end
