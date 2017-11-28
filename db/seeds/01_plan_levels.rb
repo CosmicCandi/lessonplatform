@@ -1,4 +1,6 @@
-  PlanLevel.create!(
+planlevel = PlanLevel.all
+if planlevel.length.nil? || planlevel.length < 6
+  PlanLevel.create(
     [
       { name: 'Legacy' },
       { name: 'Custom' },
@@ -8,3 +10,4 @@
       { name: 'Enterprise' }
     ]
   )
+end

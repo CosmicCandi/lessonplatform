@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 20171128154437) do
   create_table "companies", force: :cascade do |t|
     t.string "name"
     t.date "trial_status"
-    t.bigint "plan_levels_id"
+    t.bigint "plan_level_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["plan_levels_id"], name: "index_companies_on_plan_levels_id"
+    t.index ["plan_level_id"], name: "index_companies_on_plan_level_id"
   end
 
   create_table "lessons", force: :cascade do |t|
@@ -39,6 +39,6 @@ ActiveRecord::Schema.define(version: 20171128154437) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "companies", "plan_levels", column: "plan_levels_id"
+  add_foreign_key "companies", "plan_levels", column: "plan_level_id"
   add_foreign_key "lessons", "companies"
 end
