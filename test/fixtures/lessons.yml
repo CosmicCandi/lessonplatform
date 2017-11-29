@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   name: MyString
-  company: one
+  company_id: 1
   active: false
 
 two:
+  id: 2
   name: MyString
-  company: two
-  active: false
+  company_id: 2
+  active: true

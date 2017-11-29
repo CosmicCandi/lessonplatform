@@ -1,5 +1,5 @@
 class Company < ApplicationRecord
-  belongs_to :plan_level
+  belongs_to :plan_level, optional: true
 
   has_many :lessons
 

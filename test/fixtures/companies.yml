@@ -3,7 +3,9 @@
 one:
   name: MyString
   trial_status: 2017-11-28
+  plan_level_id: 1
 
 two:
   name: MyString
-  trial_status: 2017-11-28
+  trial_status: 2017-11-15
+  plan_level_id: 2

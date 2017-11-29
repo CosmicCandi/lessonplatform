@@ -38,7 +38,7 @@ class CompaniesController < ApplicationController
     # end of last month
     render json: { data: @companies.where(created_at:
                            beginning_of_last_month..end_of_last_month)
-                           .order(name: 'ASC') }
+                          .order(name: 'ASC') }
   end
 
   private
