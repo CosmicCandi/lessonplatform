@@ -7,8 +7,8 @@ class Lesson < ApplicationRecord
 
   def sanitize_name
     @lesson = self
-    @lesson.name = @lesson.name.gsub(/[\W]+/i, "")
+    @lesson.name = @lesson.name.gsub(/[\W]+/i, '')
     @lesson.save!
-    end
-
   end
+
+end
