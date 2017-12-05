@@ -16,5 +16,4 @@ class LessonTest < ActiveSupport::TestCase
     assert lesson.errors.full_messages.include?("Company must exist")
   end
 
-
 end

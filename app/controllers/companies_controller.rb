@@ -4,7 +4,7 @@ class CompaniesController < ApplicationController
 
   def index
     # Get a list of all companies
-    render json: { data: @companies }
+    render json: { data: @companies.order(name: 'ASC').as_json(include: 'lessons') }
   end
 
   def alphabetically
@@ -26,13 +26,11 @@ class CompaniesController < ApplicationController
   end
 
   def created_last_month
-    # Use Date.current.beginning_of_month to get the starting day of the month
-    # Then subtract one month from it to get last month's beginning day
-    beginning_of_last_month = (Date.current.beginning_of_month - 1.month)
+    # Use 1.month.ago.beginning of month to get the first day of last month
+    beginning_of_last_month = 1.month.ago.beginning_of_month
 
-    # Use Date.current.end_of_month to get the ending day of the month
-    # Then subtract one month from it to get last month's ending day
-    end_of_last_month = (Date.current.end_of_month - 1.month)
+    # Use 1.month.ago.end_of_month to get the last day of last month
+    end_of_last_month = 1.month.ago.end_of_month
 
     # Finally render the list of companies created between the beginning and
     # end of last month
